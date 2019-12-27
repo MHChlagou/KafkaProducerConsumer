@@ -14,5 +14,5 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
       KAFKA_DELETE_TOPIC_ENABLE: "true"
-      KAFKA_CREATE_TOPICS: Messaging_Transaction:1:1
+      
       

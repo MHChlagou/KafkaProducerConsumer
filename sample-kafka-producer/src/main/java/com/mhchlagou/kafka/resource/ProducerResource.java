@@ -1,7 +1,9 @@
 package com.mhchlagou.kafka.resource;
 
 
+import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,16 +16,21 @@ import com.mhchlagou.kafka.model.Producer;
 @RequestMapping("kafka")
 public class ProducerResource {
 	
+	private String TOPIC = "AutoCreateTopics";
+	
 	@Autowired
 	private KafkaTemplate<String, Producer> kafkaTemplate;
 	
-	private static final String TOPIC = "Messaging_Transaction";
+	@Bean
+	public NewTopic defaultTopic() {
+		return new NewTopic(TOPIC, 1, (short)1);
+	}
 	
 	@GetMapping(value = "/publish/{name}")
 	public String send(@PathVariable("name") String name) {
 		
 		kafkaTemplate.send(TOPIC, new Producer(name, "Informatique", 60000L));
-		return "Message was published successfully";
+		return "Message was published successfully to the topic : " + TOPIC;
 	}
 
 }
