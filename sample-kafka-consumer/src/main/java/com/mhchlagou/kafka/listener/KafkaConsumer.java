@@ -8,7 +8,7 @@ import com.mhchlagou.kafka.model.Producer;
 @Service
 public class KafkaConsumer {
 		
-		@KafkaListener(topics = "Messaging_Transaction", groupId = "DevOps")
+		@KafkaListener(topics = "AutoCreateTopics", groupId = "DevOps")
 		public void producer(Producer producer) {
 			System.out.println("Consumed message: " + producer);
 		}
