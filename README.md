@@ -6,10 +6,13 @@ open your teminal
 move to the directory where the docker compose file placed
 run the cmd : docker-compose up -d
 
-Once it running the second steps is to run the producer project and sending your Json data by typping this URL : http://127.0.0.1:9001/kafka/publish/{name} , you can put your name for Example : Hedi.
+Once it running the second steps is to add some data to the H2 Database with POST Request using postman via this URL : http://127.0.0.1:9001/kafka/load
+Next steps is running producer project and begin publishing data by typping this URL : http://127.0.0.1:9001/kafka/publish/all
 
-After that run the consumer project and try to look in the console logs : you have to see something like this :
-{name='Hedi', dept='Informatique', salary=60000}
+After that run the consumer project and try to look in the console logs : 
+you have to see your Object in Json format with others record data.
+
+Example of Object data : {name='Hedi', dept='Informatique', salary=60000}
 
 
 ## I hope this samples Kafka projects can help you :) 
