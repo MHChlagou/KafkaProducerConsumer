@@ -11,9 +11,12 @@ Next step is to run producer project and begin publishing data by typing this UR
 
 http://127.0.0.1:9001/kafka/publish/all
 
-After that run the consumer project and try to look in the console logs:
+After that run the consumer project and look in the console logs:
 You will see your Object in Json format with others record data.
 
 Example of Object data: {name='Hedi', dept='Informatique', salary=60000}
+
+### Confluent Control-Center
+URL for Confluent C-C : http://localhost:9021/
 
 ## I hope this samples Kafka projects can help you :)
