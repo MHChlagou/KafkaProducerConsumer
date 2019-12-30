@@ -9,7 +9,7 @@ import com.mhchlagou.kafka.model.Producer;
 @Service
 public class KafkaConsumer {
 		
-		@KafkaListener(topics = "DynamicCreateTopics", groupId = "DevOps")
+		@KafkaListener(topics = "DynamicTopics", groupId = "DevOps")
 		public void listener(ConsumerRecord<String, Producer> record, Producer producer) {
 			record.headers().forEach( header -> {
 				String value = new String(header.value(), StandardCharsets.UTF_8); 

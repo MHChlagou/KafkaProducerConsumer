@@ -25,7 +25,7 @@ import com.mhchlagou.kafka.repository.UserJpaRepository;
 public class ProducerController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ProducerController.class);
-	private String TOPIC = "DynamicCreateTopics";
+	private String TOPIC = "DynamicTopics";
 
 	@Autowired
 	private KafkaTemplate<String, Producer> kafkaTemplate;
@@ -70,6 +70,7 @@ public class ProducerController {
 					}
 				});
 				logger.info(String.format("************** Producer Data ************** ->", producer));
+				this.kafkaTemplate.flush();
 			}
 		}
 		return "Message was published successfully to the topic : " + TOPIC;

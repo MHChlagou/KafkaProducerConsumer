@@ -26,6 +26,7 @@ public class KafkaProducerConfiguration {
 			config.put(ProducerConfig.CLIENT_ID_CONFIG, "HEDI");
 			config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 			config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+			config.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, "io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor");
 			return new DefaultKafkaProducerFactory<>(config);
 		}
 		

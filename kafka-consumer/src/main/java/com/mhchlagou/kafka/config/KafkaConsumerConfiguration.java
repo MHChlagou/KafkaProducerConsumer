@@ -32,9 +32,10 @@ public class KafkaConsumerConfiguration {
 			config.put(ConsumerConfig.ALLOW_AUTO_CREATE_TOPICS_CONFIG, false);
 			config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 			config.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
-			config.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "100");
+			config.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "5000");
 			config.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "15000");
 			config.put(ConsumerConfig.CLIENT_ID_CONFIG, "HEDI");
+			config.put(ConsumerConfig.INTERCEPTOR_CLASSES_CONFIG, "io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor");
 			config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 			config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
 			return new DefaultKafkaConsumerFactory<>(config, new StringDeserializer(), 
