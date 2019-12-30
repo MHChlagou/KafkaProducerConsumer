@@ -16,4 +16,7 @@ You will see your Object in Json format with others record data.
 
 Example of Object data: {name='Hedi', dept='Informatique', salary=60000}
 
+### Confluent Control-Center
+URL for Confluent C-C : http://localhost:9021/
+
 ## I hope this samples Kafka projects can help you :)
