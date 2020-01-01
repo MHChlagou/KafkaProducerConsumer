@@ -8,5 +8,4 @@ import com.mhchlagou.kafka.model.Producer;
 @Component
 public interface UserJpaRepository extends JpaRepository<Producer, Long>{
 
-		Producer findByName(String name);
 }
